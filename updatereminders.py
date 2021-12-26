@@ -56,3 +56,7 @@ feed = Feed(
 
 print(feed.rss())
 
+with open('Fdroid_Alerter.xml', 'w') as rssfile:
+    rssfile.write(feed.rss())
+
+
