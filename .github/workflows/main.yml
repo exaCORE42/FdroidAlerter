@@ -16,22 +16,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: checkout repo content
-        uses: actions/checkout@v2
-
-      # Set up python
-      - name: setup python
-        uses: actions/setup-python@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
         with:
-          python-version: 3.10.0
- 
-      - name: install dependencies
-        run:  |
-          pip install -U pip
+          python-version: '3.10.0' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+      - run: |
           pip install -r requirements.txt
-        
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: ./updatereminders.py 
+          python ~/updatereminders.py
