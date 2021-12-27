@@ -5,7 +5,7 @@ import datetime
 from google_play_scraper import app
 import yaml
 
-print('hello?')
+print('checkpoint 1!  Program started!')
 # find current google play store version of dolphin emulator
 googleplaydolphindata = app(
     'org.dolphinemu.dolphinemu'
@@ -17,6 +17,7 @@ if old_android_version[0] != current_android_version:
     #set up beautifulsoup for dolphin emulator download page
     downloadpage = requests.get("https://dolphin-emu.org/download/")
     downloadpagesoup = BeautifulSoup(downloadpage.content, 'html.parser')
+    print('checkpoint 2 got past old vs new version check!')
 
     #find the version of dolphin emulator on f-droid
     dolphinmetadatafdroid = requests.get("https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.dolphinemu.dolphinemu.yml")
