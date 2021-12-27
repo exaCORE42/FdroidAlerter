@@ -5,7 +5,7 @@ import datetime
 from google_play_scraper import app
 import yaml
 
-
+print('hello?')
 # find current google play store version of dolphin emulator
 googleplaydolphindata = app(
     'org.dolphinemu.dolphinemu'
