@@ -26,10 +26,10 @@ jobs:
         with:
           python-version: 3.10
       
-      -name: install dependencies
-      -run:  |
-        pip install -U pip
-        pip install -r requirements.txt
+      - name: install dependencies
+        run:  |
+          pip install -U pip
+          pip install -r requirements.txt
         
 
       # Runs a set of commands using the runners shell
