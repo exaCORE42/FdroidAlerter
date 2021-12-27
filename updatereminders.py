@@ -53,7 +53,8 @@ if old_android_version[0] != current_android_version:
                 title = "NEW UPDATE TO DOLPHIN EMULATOR",
                 link = "https://gitlab.com/fdroid/fdroiddata/-/issues/2043",
                 description = '<p>'+ line1 +'</p><p>'+line2+'</p><p>'+line3+'</p><p>The current F-Droid version of dolphin is: '
-                + str(fdroidversion) + '</p><p>Link to F-Droid Dolphin Emulator page: https://f-droid.org/en/packages/org.dolphinemu.dolphinemu/</p>',
+                + str(fdroidversion) + '</p><p>The current F-Droid version of dolphin is: '
+                + str(current_android_version) + '</p><p>Link to F-Droid Dolphin Emulator page: https://f-droid.org/en/packages/org.dolphinemu.dolphinemu/</p>',
                 pubDate = datetime.datetime(datetime.datetime.now().date().year, datetime.datetime.now().date().month,
                                     datetime.datetime.now().date().day, datetime.datetime.now().time().hour,
                                     datetime.datetime.now().time().minute)
