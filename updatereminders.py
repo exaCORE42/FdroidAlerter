@@ -18,12 +18,13 @@ if old_android_version[0] != current_android_version:
     downloadpage = requests.get("https://dolphin-emu.org/download/")
     downloadpagesoup = BeautifulSoup(downloadpage.content, 'html.parser')
     print('checkpoint 2 got past old vs new version check!')
+    print(old_android_version)
 
     #find the version of dolphin emulator on f-droid
     dolphinmetadatafdroid = requests.get("https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.dolphinemu.dolphinemu.yml")
     fdroidversion = yaml.load(dolphinmetadatafdroid.text, Loader=yaml.CLoader)["CurrentVersion"]
     if str(fdroidversion) != str(current_android_version):
-
+        print('checkpoint 3! got past fdroid check!')
         # find the download link on the page (using current android version!)
         try:
             downloadpagetag = str(downloadpagesoup.body.find('a', string=current_android_version))
